@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+</head>
+<body>
+<div>
+    <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/loginWithGoogle&response_type=code
+    &client_id=569872925006-9int7tt3nsie49erh5fvldffbj2h4rhl.apps.googleusercontent.com&approval_prompt=force">Login With Gmail</a>
+    <form  method="post">
+
+        <label th:action="@{/j_spring_security_check}" for="username">User name: </label>
+        <input id="username" type="text" name="username" ><br/>
+
+        <label for="password">Password: </label>
+        <input id="password" type="password" name="password" ><br>
+        <input type="submit" value="login" >
+    </form>
+</div>
+
+</body>
+</html>

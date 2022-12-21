@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #index-header},
+                                                ~{:: #index-main-content},
+                                                ~{:: #index-footer}
+                                               )}">>
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+</head>
+<body>
+    <div id="index-header">
+        <h1>welcome to abc</h1>
+        <h2 th:text="${mess}">xyz</h2>
+        <div th:if="${loginDto}" >
+            <a th:href="@{/logout}">logout</a>
+        </div>
+        <div th:unless="${loginDto}" >
+            <a th:href="@{/logout}">login</a>
+        </div>
+    </div>
+    <div id="index-main-content">
+        <form th:action="@{/checkin}" method="POST">
+            <label for="code">mã check in: </label><br>
+            <input id= "code" type="text" name="code"><br>
+            <input type="submit" name="checkin" value="checkin">
+        </form>
+    </div>
+    <div id="index-footer">
+
+    </div>
+
+
+
+</body>
+</html>

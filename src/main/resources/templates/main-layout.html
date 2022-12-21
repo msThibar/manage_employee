@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="main-fragment (title, header, mainContent, footer)">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${title}">Title</title>
+</head>
+<body>
+    <header th:insert="${header} ?: ~{}">
+        <h2>Header page</h2>
+    </header>
+    <section th:insert="${mainContent} ?: ~{}">
+        <p>Main content page</p>
+    </section>
+    <footer th:insert="${footer} ?: ~{}">
+        <p>footer page</p>
+    </footer>
+</body>
+</html>
